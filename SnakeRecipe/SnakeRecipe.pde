@@ -3,7 +3,7 @@
 
 // The Segment class will be used to represent each part of the moving snake.
 //2. Create x and y member variables to hold the location of each segment.
-int x, y;
+int x, y;/*
 // 5. Create (but do not initialize) a Segment variable to hold the head of the Snake
 Segment head;
 // 6. Create and initialize a String to hold the direction of your snake e.g. "up"
@@ -13,7 +13,7 @@ String direction;
 int food;
 // 8. Create and initialize foodX and foodY variables to hold the location of the food.
 // (Hint: use the random method to set both the x and y to random locations within the screen size (500 by 500).)
-int foodX, foodY;
+int foodX, foodY;*/
 
 class Segment {
 
@@ -23,18 +23,6 @@ class Segment {
     x = a;
     y = b;
 
-    // 6. Create and initialize a String to hold the direction of your snake e.g. "up"
-    direction = "up";
-
-    // 7. Create and initialize a variable to hold how many pieces of food the snake has eaten.
-    // give it a value of 1 to start.
-    food = 1;
-
-    // 8. Create and initialize foodX and foodY variables to hold the location of the food.
-    // (Hint: use the random method to set both the x and y to random locations within the screen size (500 by 500).)
-
-    foodX = ((int)random(50)*10);
-    foodY = ((int)random(50)*10);
   }
 
   // 4. Add getter and setter methods for both the x and y member variables.
@@ -59,7 +47,7 @@ class Segment {
     y = b;
   }
 }
-/*
+
 // 5. Create (but do not initialize) a Segment variable to hold the head of the Snake
  Segment head;
  
@@ -75,8 +63,8 @@ class Segment {
  
  // 8. Create and initialize foodX and foodY variables to hold the location of the food.
  // (Hint: use the random method to set both the x and y to random locations within the screen size (500 by 500).)
- Random rand = new Random();
- int foodX = ((int)random(50)*10), foodY = ((int)random(50)*10);*/
+
+ int foodX = ((int)random(50)*10), foodY = ((int)random(50)*10);
 
 void setup() {
 
@@ -124,16 +112,16 @@ void move() {
   keyPressed();
   switch(direction) {
   case "up":
-    head.setY(head.getX() + 10);
+    head.setY(head.getY() - 10);
     break;
   case "down":
-    head.setY(head.getX() - 10);
+    head.setY(head.getY() + 10);
     break;
   case "left":
-    head.setX(head.getY() - 10);
+    head.setX(head.getX() - 10);
     break;
   case "right":
-    head.setX(head.getY() + 10);
+    head.setX(head.getX() + 10);
     break;
   default:
     break;
