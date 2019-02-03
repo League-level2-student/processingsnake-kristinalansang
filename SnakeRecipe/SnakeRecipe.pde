@@ -3,20 +3,9 @@
 
 // The Segment class will be used to represent each part of the moving snake.
 //2. Create x and y member variables to hold the location of each segment.
-int x, y;/*
-// 5. Create (but do not initialize) a Segment variable to hold the head of the Snake
-Segment head;
-// 6. Create and initialize a String to hold the direction of your snake e.g. "up"
-String direction;
-// 7. Create and initialize a variable to hold how many pieces of food the snake has eaten.
-// give it a value of 1 to start.
-int food;
-// 8. Create and initialize foodX and foodY variables to hold the location of the food.
-// (Hint: use the random method to set both the x and y to random locations within the screen size (500 by 500).)
-int foodX, foodY;*/
 
 class Segment {
-
+int x, y;
   // 3. Add a constructor with parameters to initialize each variable.
   Segment(int a, int b)
   {
@@ -162,14 +151,14 @@ void checkBoundaries() {
 }
 
 
-/*
+
 //20. Make sure that the key for your current direction’s opposite doesn’t work(i.e. If you’re going up, down key shouldn’t work)
  void oppositeDirection()
  {
  
+     
  
- 
- }*/
+ }
 // 21. Complete the missing parts of the collision method below.
 void collision() {
 
@@ -203,7 +192,7 @@ void manageTail() {
   tail.add(new Segment(head.getX(), head.getY()));
   // To keep your tail the right length:
   // while the tail size is greater than the number of food pieces eaten, remove the first Segment in your tail.
-  while (tail.size() > food)
+  while (tail.size() > food && tail.size() > 0)
     tail.remove(0);
 }
 
